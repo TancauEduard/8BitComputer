@@ -1,0 +1,44 @@
+64kb - 0000 - ffff
+
+0000- 7fff : ROM
+8000 - ffff: RAM 
+
+BRK - 0000 - 00
+TAB - 0001 - 01
+TBA - 0010 -02
+LDA # - 0011 - 03
+LDB # - 0100- 04
+LDA & - 0101 - 05
+LDB & - 0110 - 06
+STA & - 0111 - 07
+STB & - 1000 - 08
+ADD # -  1001- 09
+INC - 1011 - 0a
+DEC - 1100 - 0b
+SUB # - 0c
+AND # - 0d
+or# - 0e
+XOR# - 0f
+not - 10
+add & - 11
+sub & - 12
+and & - 13
+or & - 14
+xor & - 15
+
+
+
+0000: A + V
+0001: A - V
+0010: A ++
+0011: A --
+0100: A AND B
+0101: A OR B
+0110: A EOR B
+0111: NOT A
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+.DATA
+A = &8000
+
+;BRK - 00
+;TAB - 01
+;TBA - 02
+;LDA # - 03
+;LDB # - 04
+;LDA & - 05
+;LDB & - 06
+;STA & - 07
+;STB & - 08
+;ADD # - 09
+;INC - 0a
+;DEC - 0b
+;SUB # - 0c
+;AND # - 0d
+;OR # - 0e
+;XOR # - 0f
+;NOT - 10
+;ADD & - 11
+;SUB & - 12
+;AND & - 13
+;OR & - 14
+;XOR & - 15
+;INC & - 16
+;DEC & - 17
+
+.CODE
+LDA #AA
+STA A
+INC A
