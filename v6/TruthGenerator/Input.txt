@@ -1,0 +1,148 @@
+Control Pins:OE_PC CE_PC DEC_PC LD_PC WE_RAM OE_RAM WE_MBR IOE_MBR OE_MBR WE_IR OE_IR WE_MAR OE_MAR OP3_ALU OP2_ALU OP1_ALU OP0_ALU OE_ALU WE_RA OE_RA WE_RB OE_RB WE_OR OE_OR WE_ADDR0 OE_ADDR0 WE_ADDR1 OE_ADDR1 WE_TV0 OE_TV0 WE_ADDR2 OE_ADDR2 WE_ADDR3 OE_ADDR3 WE_TV1 OE_TV1 R_ADDR1 R_ADDR3 DONE_SC CLK_OFF
+Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; ld a, [addr]; ld b, [addr]; switch a, b; switch a, zp; switch b, zp; switch a, addr; switch b, addr; switch zp, zp; switch zp, addr; switch addr, addr; str a, zp; str b, zp; str a, addr; str b, addr; str 0x00, zp; str 0x00, addr; str [zp], zp; str [zp], addr; str [addr], zp; str [addr], addr; inc a; inc b; inc [zp]; inc [addr]; dec a; dec b; dec [zp]; dec [addr]; add a, 0x00; add b, 0x00; add a, [zp]; add b, [zp]; add a, [addr]; add b, [addr]; add zp, 0x00; add zp, [zp]; add zp, [addr]; add addr, 0x00; add addr, [zp]; add addr, [addr]; sub a, 0x00; sub b, 0x00; sub a, [zp]; sub b, [zp]; sub a, [addr]; sub b, [addr]; sub zp, 0x00; sub zp, [zp]; sub zp, [addr]; sub addr, 0x00; sub addr, [zp]; sub addr, [addr]; mul a, 0x00; mul b, 0x00; mul a, [zp]; mul b, [zp]; mul a, [addr]; mul b, [addr]; mul zp, 0x00; mul zp, [zp]; mul zp, [addr]; mul addr, 0x00; mul addr, [zp]; mul addr, [addr]; and a, 0x00; and b, 0x00; and a, [zp]; and b, [zp]; and a, [addr]; and b, [addr]; and zp, 0x00; and zp, [zp]; and zp, [addr]; and addr, 0x00; and addr, [zp]; and addr, [addr]; or a, 0x00; or b, 0x00; or a, [zp]; or b, [zp]; or a, [addr]; or b, [addr]; or zp, 0x00; or zp, [zp]; or zp, [addr]; or addr, 0x00; or addr, [zp]; or addr, [addr]; xor a, 0x00; xor b, 0x00; xor a, [zp]; xor b, [zp]; xor a, [addr]; xor b, [addr]; xor zp, 0x00; xor zp, [zp]; xor zp, [addr]; xor addr, 0x00; xor addr, [zp]; xor addr, [addr]; rol a; rol b; rol [zp]; rol [addr]; ror a; ror b; ror [zp]; ror [addr]
+/brk
+00000000:OE_PC, WE_MAR
+00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
+00000010:IOE_MBR, WE_IR
+00000011:CLK_OFF
+00000100:DONE_SC
+/jmp zp
+00000000:OE_PC, WE_MAR
+00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
+00000010:IOE_MBR, WE_IR
+00000011:OE_PC, WE_MAR
+00000100:OE_MAR, OE_RAM, WE_ADDR0, R_ADDR1
+00000101:OE_ADDR0, OE_ADDR1, LD_PC
+00000111:DONE_SC
+/jmp addr
+00000000:OE_PC, WE_MAR
+00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
+00000010:IOE_MBR, WE_IR
+00000011:OE_PC, WE_MAR
+00000100:OE_MAR, OE_RAM, WE_ADDR0, CE_PC
+00000101:OE_PC, WE_MAR
+00000111:OE_MAR, OE_RAM, WE_MBR
+00001000:IOE_MBR, WE_ADDR1
+00001001:OE_ADDR0, OE_ADDR1, LD_PC
+00001010:DONE_SC
+/ld a, imm
+/ld b, imm
+/ld a, [zp]
+/ld b, [zp]
+/ld a, [addr]
+/ld b, [addr]
+/switch a, b
+/switch a, zp
+/switch b, zp
+/switch a, addr
+/switch b, addr
+/switch zp, zp
+/switch zp, addr
+/switch addr, addr
+
+/str a, zp
+/str b, zp
+/str a, addr
+/str b, addr
+/str 0x00, zp
+/str 0x00, addr
+/str [zp], zp  // Note: Typo in the original input, corrected here
+/str [zp], addr  // Note: Typo in the original input, corrected here
+/str [addr], zp
+/str [addr], addr
+
+/inc a
+/inc b
+/inc [zp]
+/inc [addr]
+/dec a
+/dec b
+/dec [zp]
+/dec [addr]
+
+/add a, 0x00
+/add b, 0x00
+/add a, [zp]
+/add b, [zp]
+/add a, [addr]
+/add b, [addr]
+/add zp, 0x00
+/add zp, [zp]
+/add zp, [addr]
+/add addr, 0x00
+/add addr, [zp]
+/add addr, [addr]
+
+/sub a, 0x00
+/sub b, 0x00
+/sub a, [zp]
+/sub b, [zp]
+/sub a, [addr]
+/sub b, [addr]
+/sub zp, 0x00
+/sub zp, [zp]
+/sub zp, [addr]
+/sub addr, 0x00
+/sub addr, [zp]
+/sub addr, [addr]
+
+/mul a, 0x00
+/mul b, 0x00
+/mul a, [zp]
+/mul b, [zp]
+/mul a, [addr]
+/mul b, [addr]
+/mul zp, 0x00
+/mul zp, [zp]
+/mul zp, [addr]
+/mul addr, 0x00
+/mul addr, [zp]
+/mul addr, [addr]
+
+/and a, 0x00
+/and b, 0x00
+/and a, [zp]
+/and b, [zp]
+/and a, [addr]
+/and b, [addr]
+/and zp, 0x00
+/and zp, [zp]
+/and zp, [addr]
+/and addr, 0x00
+/and addr, [zp]
+/and addr, [addr]
+
+/or a, 0x00
+/or b, 0x00
+/or a, [zp]
+/or b, [zp]
+/or a, [addr]
+/or b, [addr]
+/or zp, 0x00
+/or zp, [zp]
+/or zp, [addr]
+/or addr, 0x00
+/or addr, [zp]
+/or addr, [addr]
+
+/xor a, 0x00
+/xor b, 0x00
+/xor a, [zp]
+/xor b, [zp]
+/xor a, [addr]
+/xor b, [addr]
+/xor zp, 0x00
+/xor zp, [zp]
+/xor zp, [addr]
+/xor addr, 0x00
+/xor addr, [zp]
+/xor addr, [addr]
+
+/rol a
+/rol b
+/rol [zp]
+/rol [addr]
+/ror a
+/ror b
+/ror [zp]
+/ror [addr]
