@@ -21,12 +21,12 @@
 21 - str b, zp
 22 - str a, addr
 23 - str b, addr
-24 - str 0x00, zp
-25 - str 0x00, addr
+24 - str imm, zp
+25 - str imm, addr
 26 - str [zp], zp
 27 - str [zp]. addr
 28 - str [addr], zp
-29 - str [addr], addr]
+29 - str [addr], addr
 
 30 - inc a
 31 - inc b
@@ -37,82 +37,82 @@
 36 - dec [zp]
 37 - dec [addr]
 
-40 - add a, 0x00
-41 - add b, 0x00
+40 - add a, imm
+41 - add b, imm
 42 - add a, [zp]
 43 - add b, [zp]
 44 - add a, [addr]
 45 - add b, [addr]
-46 - add zp, 0x00
+46 - add zp, imm
 47 - add zp, [zp]
 48 - add zp, [addr]
-49 - add addr, 0x00
+49 - add addr, imm
 4a - add addr, [zp]
 4b - add addr, [addr]
 
-50 - sub a, 0x00
-51 - sub b, 0x00
+50 - sub a, imm
+51 - sub b, imm
 52 - sub a, [zp]
 53 - sub b, [zp]
 54 - sub a, [addr]
 55 - sub b, [addr]
-56 - sub zp, 0x00
+56 - sub zp, imm
 57 - sub zp, [zp]
 58 - sub zp, [addr]
-59 - sub addr, 0x00
+59 - sub addr, imm
 5a - sub addr, [zp]
 5b - sub addr, [addr]
 
-60 - mul a, 0x00
-61 - mul b, 0x00
+60 - mul a, imm
+61 - mul b, imm
 62 - mul a, [zp]
 63 - mul b, [zp]
 64 - mul a, [addr]
 65 - mul b, [addr]
-66 - mul zp, 0x00
+66 - mul zp, imm
 67 - mul zp, [zp]
 68 - mul zp, [addr]
-69 - mul addr, 0x00
+69 - mul addr, imm
 6a-  mul addr, [zp]
 6b - mul addr, [addr]
 
 
-70 - and a, 0x00
-71 - and b, 0x00
+70 - and a, imm
+71 - and b, imm
 72 - and a, [zp]
 73 - and b, [zp]
 74 - and a, [addr]
 75 - and b, [addr]
-76 - and zp, 0x00
+76 - and zp, imm
 77 - and zp, [zp]
 78 - and zp, [addr]
-79 - and addr, 0x00
+79 - and addr, imm
 7a - and addr, [zp]
 7b - and addr, [addr]
 
-80 - or a, 0x00
-81 - or b, 0x00
+80 - or a, imm
+81 - or b, imm
 82 - or a, [zp]
 83 - or b, [zp]
 84 - or a, [addr]
 85 - or b, [addr]
-86 - or zp, 0x00
+86 - or zp, imm
 87 - or zp, [zp]
 88 - or zp, [addr]
-89 - or addr, 0x00
+89 - or addr, imm
 8a - or addr, [zp]
 8b - or addr, [addr]
 
-90 - xor a, 0x00
-91 - xor b, 0x00
+90 - xor a, imm
+91 - xor b, imm
 92 - xor a, [zp]
 93 - xor b, [zp]
 94 - xor a, [addr]
 95 - xor b, [addr]
-96 - xor zp, 0x00
+96 - xor zp, imm
 97 - xor zp, [zp]
 98 - xor zp, [addr]
-99 - xor addr, 0x00
+99 - xor addr, imm
 9a - xor addr, [zp]
 9b - xor addr, [addr]
 
