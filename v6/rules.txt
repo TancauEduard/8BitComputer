@@ -126,5 +126,11 @@ a6 - ror [zp]
 a7 - ror [addr]
 
 
-
-s
+0000: A + V
+0001: A - V
+0010: A ++
+0011: A --
+0100: A AND B
+0101: A OR B
+0110: A EOR B
+0111: NOT A
