@@ -8,14 +8,14 @@
 13 - ld b, [zp]
 14 - ld a, [addr]
 15 - ld b, [addr]
-16 - switch a, b
-17 - switch a, zp
-18 - switch b, zp
-19 - switch a, addr
-1a - switch b, addr
-1b - switch zp, zp
-1c - switch zp, addr
-1d - switch addr, addr
+16 - sw a, b
+17 - sw a, zp
+18 - sw b, zp
+19 - sw a, addr
+1a - sw b, addr
+1b - sw zp, zp
+1c - sw zp, addr
+1d - sw addr, addr
 
 20 - str a, zp
 21 - str b, zp
@@ -127,3 +127,4 @@ a7 - ror [addr]
 
 
 
+s
