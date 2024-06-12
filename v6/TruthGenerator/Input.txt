@@ -1,5 +1,5 @@
 Control Pins:OE_PC CE_PC DEC_PC LD_PC WE_RAM OE_RAM WE_MBR ILD_MBR IOE_MBR OE_MBR WE_IR OE_IR WE_MAR OE_MAR OP3_ALU OP2_ALU OP1_ALU OP0_ALU OE_ALU WE_RA OE_RA WE_RB OE_RB WE_OR OE_OR WE_ADDR0 OE_ADDR0 WE_ADDR1 OE_ADDR1 WE_TV0 OE_TV0 WE_ADDR2 OE_ADDR2 WE_ADDR3 OE_ADDR3 WE_TV1 OE_TV1 R_ADDR1 R_ADDR3 DONE_SC CLK_OFF
-Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; ld a, [addr]; ld b, [addr]; sw a, b; sw a, zp; sw b, zp; sw a, addr; sw b, addr; sw zp, zp; sw zp, addr; sw addr, addr; str a, zp; str b, zp; str a, addr; str b, addr; str imm, zp; str imm, addr; str [zp], zp; str [zp], addr; str [addr], zp; str [addr], addr; inc a; inc b; inc [zp]; inc [addr]; dec a; dec b; dec [zp]; dec [addr]; add a, imm; add b, imm; add a, [zp]; add b, [zp]; add a, [addr]; add b, [addr]; add zp, imm; add zp, [zp]; add zp, [addr]; add addr, imm; add addr, [zp]; add addr, [addr]; sub a, imm; sub b, imm; sub a, [zp]; sub b, [zp]; sub a, [addr]; sub b, [addr]; sub zp, imm; sub zp, [zp]; sub zp, [addr]; sub addr, imm; sub addr, [zp]; sub addr, [addr]; mul a, imm; mul b, imm; mul a, [zp]; mul b, [zp]; mul a, [addr]; mul b, [addr]; mul zp, imm; mul zp, [zp]; mul zp, [addr]; mul addr, imm; mul addr, [zp]; mul addr, [addr]; and a, imm; and b, imm; and a, [zp]; and b, [zp]; and a, [addr]; and b, [addr]; and zp, imm; and zp, [zp]; and zp, [addr]; and addr, imm; and addr, [zp]; and addr, [addr]; or a, imm; or b, imm; or a, [zp]; or b, [zp]; or a, [addr]; or b, [addr]; or zp, imm; or zp, [zp]; or zp, [addr]; or addr, imm; or addr, [zp]; or addr, [addr]; xor a, imm; xor b, imm; xor a, [zp]; xor b, [zp]; xor a, [addr]; xor b, [addr]; xor zp, imm; xor zp, [zp]; xor zp, [addr]; xor addr, imm; xor addr, [zp]; xor addr, [addr]; rol a; rol b; rol [zp]; rol [addr]; ror a; ror b; ror [zp]; ror [addr]
+Operations: brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; ld a, [addr]; ld b, [addr]; sw a, b; sw a, zp; sw b, zp; sw a, addr; sw b, addr; sw zp, zp; sw zp, addr; sw addr, addr; str a, zp; str b, zp; str a, addr; str b, addr; str imm, zp; str imm, addr; str [zp], zp; str [zp], addr; str [addr], zp; str [addr], addr; inc a; inc b; inc [zp]; inc [addr]; dec a; dec b; dec [zp]; dec [addr]; add a, imm; add b, imm; add a, [zp]; add b, [zp]; add a, [addr]; add b, [addr]; add zp, imm; add zp, [zp]; add zp, [addr]; add addr, imm; add addr, [zp]; add addr, [addr]; sub a, imm; sub b, imm; sub a, [zp]; sub b, [zp]; sub a, [addr]; sub b, [addr]; sub zp, imm; sub zp, [zp]; sub zp, [addr]; sub addr, imm; sub addr, [zp]; sub addr, [addr]; mul a, imm; mul b, imm; mul a, [zp]; mul b, [zp]; mul a, [addr]; mul b, [addr]; mul zp, imm; mul zp, [zp]; mul zp, [addr]; mul addr, imm; mul addr, [zp]; mul addr, [addr]; and a, imm; and b, imm; and a, [zp]; and b, [zp]; and a, [addr]; and b, [addr]; and zp, imm; and zp, [zp]; and zp, [addr]; and addr, imm; and addr, [zp]; and addr, [addr]; or a, imm; or b, imm; or a, [zp]; or b, [zp]; or a, [addr]; or b, [addr]; or zp, imm; or zp, [zp]; or zp, [addr]; or addr, imm; or addr, [zp]; or addr, [addr]; xor a, imm; xor b, imm; xor a, [zp]; xor b, [zp]; xor a, [addr]; xor b, [addr]; xor zp, imm; xor zp, [zp]; xor zp, [addr]; xor addr, imm; xor addr, [zp]; xor addr, [addr]
 /brk
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
@@ -50,7 +50,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_RA
 00001001:DONE_SC
@@ -61,7 +61,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00001000:IOE_MBR, WE_RB
 00001001:DONE_SC
@@ -108,7 +108,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_OR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_RA
 00001001:OE_OR, ILD_MBR, WE_MBR, OE_PC, WE_MAR
@@ -121,7 +121,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RB, WE_OR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_RB
 00001001:OE_OR, WE_MBR, OE_PC, WE_MAR
@@ -166,13 +166,13 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
 00001010:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00001011:IOE_MBR, WE_ADDR2, R_ADDR3
-00001100:OE_ADDR2, OE_ADRRR3, WE_MAR
+00001100:OE_ADDR2, OE_ADDR3, WE_MAR
 00001101:OE_MAR, OE_RAM, WE_MBR
 00001110:IOE_MBR, WE_TV1
 00001111:OE_TV0, WE_MBR
@@ -187,7 +187,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -198,7 +198,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00001110:IOE_MBR, WE_ADDR3
 00001111:OE_ADDR2, OE_ADDR3, WE_MAR
 00010000:OE_MAR, OE_RAM, WE_MBR
-00010001:OE_ADD0, OE_ADDR1, WE_MAR
+00010001:OE_ADDR0, OE_ADDR1, WE_MAR
 00010010:OE_MAR, OE_MBR, WE_RAM
 00010011:OE_ADDR2, OE_ADDR3, WE_MAR, OE_TV0, WE_MBR
 00010100:OE_MBR, OE_MAR, WE_RAM
@@ -224,7 +224,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00010010:IOE_MBR, WE_ADDR3
 00010011:OE_ADDR2, OE_ADDR3, WE_MAR
 00010100:OE_MAR, OE_RAM, WE_MBR
-00010101:OE_ADD0, OE_ADDR1, WE_MAR
+00010101:OE_ADDR0, OE_ADDR1, WE_MAR
 00010110:OE_MAR, OE_MBR, WE_RAM
 00010111:OE_ADDR2, OE_ADDR3, WE_MAR, OE_TV0, WE_MBR
 00011000:OE_MBR, OE_MAR, WE_RAM
@@ -236,7 +236,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RA, WE_MBR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RA, WE_MBR
 00000111:OE_MAR, OE_MBR, WE_RAM
 00001000:DONE_SC
 /str b, zp
@@ -246,7 +246,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_MBR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_MBR
 00000111:OE_MAR, OE_MBR, WE_RAM
 00001000:DONE_SC
 /str a, addr
@@ -311,13 +311,13 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
 00001010:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00001011:IOE_MBR, WE_ADDR0, R_ADDR1
-00001100:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_TV0, WE_MBR
+00001100:OE_ADDR0, OE_ADDR1, WE_MAR, OE_TV0, WE_MBR
 00001101:OE_MAR, OE_MBR, WE_RAM
 00001110:DONE_SC
 /str [zp], addr
@@ -327,7 +327,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -403,7 +403,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV0
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_RA
 00001001:OP1_ALU, OE_ALU, WE_MBR
@@ -448,7 +448,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV0
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_RA
 00001001:OP0_ALU, OP1_ALU, OE_ALU, WE_MBR
@@ -498,7 +498,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_ALU, WE_OR
@@ -511,7 +511,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_ALU, WE_RB
@@ -556,7 +556,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -572,7 +572,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -591,7 +591,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00000011:OE_PC, WE_MAR
@@ -701,7 +701,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OP_ALUOE_ALU, WE_OR
@@ -714,7 +714,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OP0_ALU, OE_ALU, WE_RB
@@ -759,7 +759,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -775,7 +775,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -794,7 +794,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00000011:OE_PC, WE_MAR
@@ -904,7 +904,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OP2_ALU, OE_ALU, WE_OR
@@ -917,7 +917,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OP2_ALU, OE_ALU, WE_RB
@@ -962,7 +962,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -978,7 +978,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -997,7 +997,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00000011:OE_PC, WE_MAR
@@ -1107,7 +1107,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OP0_ALU, OP2_ALU, OE_ALU, WE_OR
@@ -1120,7 +1120,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OP0_ALU, OP2_ALU, OE_ALU, WE_RB
@@ -1165,7 +1165,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -1181,7 +1181,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -1200,7 +1200,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00000011:OE_PC, WE_MAR
@@ -1310,7 +1310,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OP0_ALU, OP2_ALU, OE_ALU, WE_OR
@@ -1323,7 +1323,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OP0_ALU, OP2_ALU, OE_ALU, WE_RB
@@ -1368,7 +1368,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -1384,7 +1384,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -1403,7 +1403,7 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00000011:OE_PC, WE_MAR
@@ -1485,17 +1485,17 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00010110:OP0_ALU, OP2_ALU, OE_ALU, WE_MBR, OE_ADDR0, OE_ADDR1, WE_MAR
 00010111:OE_MAR, OE_MBR, WE_RAM, OE_TV1, WE_RA
 00011000:DONE_SC
-/mul a, imm
+/xor a, imm
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_TV0
-00000110:OP2_ALU, OE_ALU, WE_OR
+00000110:OP1_ALU, OP2_ALU, OE_ALU, WE_OR
 00000111:OE_OR, WE_RA
 00001000:DONE_SC
-/mul b, imm
+/xor b, imm
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
@@ -1503,36 +1503,36 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_TV0
 00000110:OE_RB, WE_RA
-00000111:OP2_ALU, OE_ALU, WE_RB
+00000111:OP1_ALU, OP2_ALU, OE_ALU, WE_RB
 00001000:OE_TV1, WE_RA
 00001001:DONE_SC
-/mul a, [zp]
+/xor a, [zp]
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
 00000011:OE_PC, WE_MAR
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
-00001001:OP2_ALU, OE_ALU, WE_OR
+00001001:OP1_ALU, OP2_ALU, OE_ALU, WE_OR
 00001010:OE_OR, WE_RA
 00001011:DONE_SC
-/mul b, [zp]
+/xor b, [zp]
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
-00001001:OP2_ALU, OE_ALU, WE_RB
+00001001:OP1_ALU, OP2_ALU, OE_ALU, WE_RB
 00001010:OE_TV1, WE_RA
 00001011:DONE_SC
-/mul a, [addr]
+/xor a, [addr]
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
@@ -1545,10 +1545,10 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00001010:OE_ADDR0, OE_ADDR1, WE_MAR
 00001011:OE_MAR, OE_RAM, WE_MBR
 00001100:IOE_MBR, WE_TV0
-00001101:OP2_ALU, OE_ALU, WE_OR
+00001101:OP1_ALU, OP2_ALU, OE_ALU, WE_OR
 00001110:OE_OR, WE_RA
 00001111:DONE_SC
-/mul b, [addr]
+/xor b, [addr]
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
@@ -1561,33 +1561,33 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00001010:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00001011:OE_MAR, OE_RAM, WE_MBR
 00001100:IOE_MBR, WE_TV0
-00001101:OP2_ALU, OE_ALU, WE_RB
+00001101:OP1_ALU, OP2_ALU, OE_ALU, WE_RB
 00001110:OE_TV1, WE_RA
 00001111:DONE_SC
-/mul zp, imm
+/xor zp, imm
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR, OE_RB, WE_RA
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_RB, WE_RA
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
 00001010:OE_MAR, OE_RAM, WE_MBR
 00001011:IOE_MBR, WE_RA
-00001100:OP2_ALU, OE_ALU, WE_MBR, OE_ADDR0, OE_ADDR1, WE_MAR
+00001100:OP1_ALU, OP2_ALU, OE_ALU, WE_MBR, OE_ADDR0, OE_ADDR1, WE_MAR
 00001101:OE_MAR, OE_MBR, WE_RAM, OE_TV1, WE_RA
 00001110:DONE_SC
-/mul zp, [zp]
+/xor zp, [zp]
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00001001:OE_PC, WE_MAR
@@ -1596,17 +1596,17 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00001100:OE_ADDR2, OE_ADDR3, WE_MAR
 00001101:OE_MAR, OE_RAM, WE_MBR
 00001110:IOE_MBR, WE_RA
-00001111:OP2_ALU, OE_ALU, WE_MBR, OE_ADDR0, OE_ADDR1, WE_MAR
+00001111:OP1_ALU, OP2_ALU, OE_ALU, WE_MBR, OE_ADDR0, OE_ADDR1, WE_MAR
 00010000:OE_MAR, OE_MBR, WE_RAM, OE_TV1, WE_RA
 00010001:DONE_SC
-/mul zp, [addr]
+/xor zp, [addr]
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
 00000011:OE_PC, WE_MAR, OE_RA, WE_TV1
 00000100:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000101:IOE_MBR, WE_ADDR0, R_ADDR1
-00000110:OE_ADDR0, OE_ADRRR1, WE_MAR
+00000110:OE_ADDR0, OE_ADDR1, WE_MAR
 00000111:OE_MAR, OE_RAM, WE_MBR
 00001000:IOE_MBR, WE_TV0
 00000011:OE_PC, WE_MAR
@@ -1618,11 +1618,11 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00001010:OE_ADDR0, OE_ADDR1, WE_MAR
 00001011:OE_MAR, OE_RAM, WE_MBR
 00001100:IOE_MBR, WE_RA
-00001101:OP2_ALU, OE_ALU, WE_MBR
+00001101:OP1_ALU, OP2_ALU, OE_ALU, WE_MBR
 00001110:OE_ADDR0, OE_ADDR1, WE_MAR, OE_TV1, WE_RA
 00001111:OE_MBR, OE_RAM, WE_RAM
 00010000:DONE_SC
-/mul addr, imm
+/xor addr, imm
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
@@ -1638,10 +1638,10 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00001101:OE_PC, WE_MAR
 00001110:OE_MAR, OE_RAM, WE_MBR
 00001111:IOE_MBR, WE_TV0
-00010000:OE_ADDR0, OE_ADDR1, WE_MAR, OP2_ALU, OE_ALU, WE_MBR
+00010000:OE_ADDR0, OE_ADDR1, WE_MAR, OP1_ALU, OP2_ALU, OE_ALU, WE_MBR
 00010001:OE_MAR, OE_MBR, WE_RAM
 00010010:DONE_SC
-/mul addr, [zp]
+/xor addr, [zp]
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
@@ -1660,10 +1660,10 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00010000:OE_ADDR2, OE_ADDR1, WE_MAR
 00010001:OE_MAR, OE_RAM, WE_MBR
 00010010:IOE_MBR, WE_TV0
-00010011:OP2_ALU, OE_ALU, WE_MBR, OE_ADDR0, OE_ADDR1, WE_MAR
+00010011:OP1_ALU, OP2_ALU, OE_ALU, WE_MBR, OE_ADDR0, OE_ADDR1, WE_MAR
 00010100:OE_MAR, OE_MBR, WE_RAM
 00010101:DONE_SC
-/mul addr, [addr]
+/xor addr, [addr]
 00000000:OE_PC, WE_MAR
 00000001:OE_MAR, OE_RAM, WE_MBR, CE_PC
 00000010:IOE_MBR, WE_IR
@@ -1685,14 +1685,6 @@ Operations:brk; jmp zp; jmp addr; ld a, imm; ld b, imm; ld a, [zp]; ld b, [zp]; 
 00010011:OE_ADDR0, OE_ADDR1, WE_MAR
 00010100:OE_MAR, OE_RAM, WE_MBR
 00010101:IOE_MBR, WE_TV0
-00010110:OP2_ALU, OE_ALU, WE_MBR, OE_ADDR0, OE_ADDR1, WE_MAR
+00010110:OP1_ALU, OP2_ALU, OE_ALU, WE_MBR, OE_ADDR0, OE_ADDR1, WE_MAR
 00010111:OE_MAR, OE_MBR, WE_RAM, OE_TV1, WE_RA
 00011000:DONE_SC
-/rol a
-/rol b
-/rol [zp]
-/rol [addr]
-/ror a
-/ror b
-/ror [zp]
-/ror [addr]
